@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+        <!-- Afficher une table -->
+        <table class="table" id="example">
+
+        <!-- Entête de du tableau -->
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prix</th>
+                    <th scope="col">Lacalité</th>
+                    <th scope="col">Téléphone</th>
+                    
+                </tr>
+            </thead>
+
+            <!-- Corps du tableau -->
+            <tbody>
+                <!-- Faire du python à l'intérieur du html -->
+                {% for doc in database %}
+                    <tr>
+                        <th>{{ doc['_source']['name'] }}</th>
+                        <td>{{ doc['_source']['price'] }}</td>
+                        <td>{{ doc['_source']['local'] }}</td>
+                        <td>{{ doc['_source']['telephone'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% endblock %}  

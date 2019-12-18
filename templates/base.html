@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title> TP Big Data | {{ titre }}</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='assets/css/bootstrap.css') }}" rel="stylesheet">
+    <!-- Fontawesome core CSS -->
+    <link href="{{ url_for('static', filename='assets/css/font-awesome.min.css') }}" rel="stylesheet" />
+    <!--GOOGLE FONT -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!--Slide Show Css -->
+    <link href="{{ url_for('static', filename='assets/ItemSlider/css/main-style.css') }}" rel="stylesheet" />
+    <!-- custom CSS here -->
+    <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet" />
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" >
+
+    
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><strong>TP </strong> Big Data</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+                
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input disabled type="text" placeholder="Enter Keyword Here ..." class="form-control">
+                    </div>
+                    &nbsp; 
+                    <button type="submit" class="btn btn-primary" disabled>Search</button>
+                </form>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-md-3">
+                <div>
+                    <a href="#" class="list-group-item active">Data bases
+                    </a>
+                    <ul class="list-group">
+                            <li class="list-group-item">
+                                    <a href="/database_groupe_1" > Groupe 1 (Cars et Camions) </a>
+                                 <!--Groupe 1 : (Cars et Camions)-->
+                                 <!--<span class="label label-primary pull-right">234</span></a>-->
+                             </li>
+
+                             <li class="list-group-item">
+                                    <a href="/database_groupe_2" > Groupe 2 (Offres d'emploi) </a>
+                                 
+                             </li>
+                             <li class="list-group-item">
+                                    <a href="/database_groupe_3" > Groupe 3 (Vehicules) </a>
+                                 
+                             </li>
+                             <li class="list-group-item">
+                                    <a href="/database_groupe_4" > Groupe 4 (Offres de services) </a>
+                                 
+                             </li>
+                             <li class="list-group-item">
+                                    <a href="/database_groupe_5" > Groupe 5 (Agro alimentaire) </a>
+                                 
+                             </li>
+                             <li class="list-group-item">
+                                    <a href="/database_groupe_6" > Groupe 6 (Electro-manager) </a>
+                                 
+                             </li>
+                             <li class="list-group-item">
+                                    <a href="/database_groupe_7" > Groupe 7 (Mode beaute) </a>
+                                 
+                             </li>
+                             <li class="list-group-item">
+                                    <a href="/database_groupe_8" > Groupe 8 (Materiaux outils equipements) </a>
+                                 
+                             </li>
+                             <li class="list-group-item">
+                                    <a href="/database_groupe_9" > Groupe 9 (Accessoire)  </a>
+                                 
+                             </li>
+                             <li class="list-group-item">
+                                    <a href="/database_groupe_10" > Groupe 10 (Equipement maison) </a>
+                                 
+                             </li>
+                             <li class="list-group-item">
+                                    <a href="/database_groupe_11" > Groupe 11 (Animaux) </a>
+                                 
+                             </li>
+                             <li class="list-group-item">
+                                    <a href="/database_groupe_12" > Groupe 12 (Elevage)</a>
+                                 
+                             </li>
+                             <li class="list-group-item">
+                                    <a href="/database_groupe_13" > Groupe 13 (Electroniques) </a>
+                                 
+                             </li>
+                             <li class="list-group-item">
+                                    <a href="/database_groupe_15" > Groupe 15 (Loisirs sport) </a>
+                                 
+                             </li>
+                             
+
+
+
+                             
+
+                    </ul>
+                </div>
+                <!-- /.div -->
+                
+                <!-- /.div -->
+               
+                <!-- /.div -->
+                
+                
+                <!-- /.div -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-9">
+                <div>
+                    <ol class="breadcrumb">
+                        <li><a href="accueil">Home</a></li>
+                        <li class="active">{{ titre }}</li>
+                    </ol>
+                </div>
+                
+                <!-- /.row -->
+                <div class="row">
+
+                        {% block content %}{% endblock %}
+                    
+                </div>
+                <!-- /.row -->
+                <!--<div class="row">
+                    <ul class="pagination alg-right-pad">
+                        <li><a href="#">&laquo;</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </div>-->
+                <!-- /.row -->
+                
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  
+
+    <!--Footer -->
+    
+    <!-- /.col -->
+    <div class="col-md-12 end-box ">
+        &copy; 2018 | &nbsp; All Rights Reserved | &nbsp; www.aims-senegal.org | Email us: osias.tossou@aims-senegal.org
+    </div>
+    <!-- /.col -->
+    <!--Footer end -->
+    <!--Core JavaScript file  -->
+    <script src="{{ url_for('static', filename='assets/js/jquery-1.10.2.js') }}"></script>
+    <!--bootstrap JavaScript file  -->
+    <script src="{{ url_for('static', filename='assets/js/bootstrap.js') }}"></script>
+    <!--Slider JavaScript file  -->
+    <script src="{{ url_for('static', filename='assets/ItemSlider/js/modernizr.custom.63321.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/ItemSlider/js/jquery.catslider.js') }}"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" ></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" ></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js" ></script>
+
+    
+
+    <script>
+        $(document).ready(function() {
+    $('#example').DataTable();
+} );
+    </script>
+
+    <script>
+        $(function () {
+
+            $('#mi-slider').catslider();
+
+        });
+		</script>
+</body>
+</html>
